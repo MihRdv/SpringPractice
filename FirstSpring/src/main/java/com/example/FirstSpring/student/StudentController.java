@@ -1,5 +1,6 @@
 package com.example.FirstSpring.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +14,18 @@ import java.util.List;
 @SpringBootApplication
 @RequestMapping(path = "/students")
 public class StudentController {
+    private final StudentService studentService;
+
+    @Autowired
+    public StudentController(StudentService studentService){
+        this.studentService = studentService;
+    }
+
     public static void main(String[] args) {SpringApplication.run(StudentController.class,args);
     }
 
-    @GetMapping("/students")
+    @GetMapping
     public List<Student> studentInfo(){
-        return List.of(new Student(20, "John", "John", LocalDate.of(2004, 6, 10), 1L));
+        return studentService.studentInfo();
     }
 }
