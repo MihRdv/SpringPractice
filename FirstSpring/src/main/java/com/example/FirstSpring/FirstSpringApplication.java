@@ -15,7 +15,7 @@ public class FirstSpringApplication {
 		SpringApplication.run(FirstSpringApplication.class, args);
 	}
 
-	@GetMapping("/hello")
+	@GetMapping
 	public String helloWorld(){
 		return "Hello World";
 	}
