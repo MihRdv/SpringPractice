@@ -1,15 +1,21 @@
 package com.example.FirstSpring.student;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class StudentService {
 
-    public List<Student> studentInfo(){
-        return List.of(new Student(20, "John", "John@gmail.com", LocalDate.of(2004, 6, 10), 1L));
+    private final StudentRepository studentRepository;
+
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll(); // Fetches all students from the database
     }
 }
