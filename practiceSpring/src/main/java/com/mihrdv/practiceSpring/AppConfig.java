@@ -8,6 +8,6 @@ public class AppConfig {
 
     @Bean("practiceClass")
     public PracticeClass practiceClass(){
-        return new PracticeClass();
+        return new PracticeClass("The variable I just added");
     }
 }
