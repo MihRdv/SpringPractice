@@ -7,12 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AppService {
 
-    private final PracticeClass practiceClass;
-
-    @Autowired
-    public AppService(@Qualifier("bean2") PracticeClass practiceClass) {
-        this.practiceClass = practiceClass;
-    }
+    @Autowired //Instance of field injection
+    private PracticeClass practiceClass;
 
     public String message(){
         return "The dependency says: "+ practiceClass.returnHello();
