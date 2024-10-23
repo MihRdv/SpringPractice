@@ -1,7 +1,7 @@
 package com.mihrdv.practiceSpring;
 
 public class PracticeClass {
-    private String myVar;
+    private final String myVar;
 
     public PracticeClass(String myVar){
         this.myVar = myVar;
