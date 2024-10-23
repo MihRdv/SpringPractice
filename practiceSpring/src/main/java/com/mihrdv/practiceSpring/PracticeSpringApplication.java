@@ -9,9 +9,9 @@ public class PracticeSpringApplication {
 	public static void main(String[] args) {
 		var ctx = SpringApplication.run(PracticeSpringApplication.class, args);
 
-		PracticeClass practiceClass = ctx.getBean("practiceClass",PracticeClass.class);
+		AppService appService = ctx.getBean(AppService.class);
 		//Printing to console via dependency injection
-		System.out.println(practiceClass.returnHello());
+		System.out.println(appService.message());
 	}
 
 
