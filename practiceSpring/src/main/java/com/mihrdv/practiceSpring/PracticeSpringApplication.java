@@ -15,7 +15,8 @@ public class PracticeSpringApplication {
 		System.out.println(practiceClass.returnHello());
 	}
 
-	@Bean
+	//Alternatively instead of creating a bean I can make the entire class into a component
+	//@Bean
 	public PracticeClass practiceClass(){
 		return new PracticeClass();
 	}
