@@ -12,6 +12,9 @@ public class PracticeSpringApplication {
 		AppService appService = ctx.getBean(AppService.class);
 		//Printing to console via dependency injection
 		System.out.println(appService.message());
+		System.out.println(appService.printAppName());
+		System.out.println(appService.printJavaVer());
+		System.out.println(appService.printOsName());
 	}
 
 
