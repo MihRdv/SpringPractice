@@ -9,8 +9,8 @@ public class AppService {
 
     private PracticeClass practiceClass;
 
-    @Autowired //Instance of method injection
-    public void injectDependency(PracticeClass practiceClass){
+    @Autowired
+   public AppService (PracticeClass practiceClass){
         this.practiceClass = practiceClass;
     }
 
