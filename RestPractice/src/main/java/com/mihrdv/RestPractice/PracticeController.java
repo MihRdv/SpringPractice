@@ -15,4 +15,8 @@ public class PracticeController {
         return "Request accepted. Message is : "+ message;
     }
 
+    @PostMapping("/post-order")
+    public String post(@RequestBody Order order){
+        return "Request accepeted. Order is : "+ order.toString();
+    }
 }
