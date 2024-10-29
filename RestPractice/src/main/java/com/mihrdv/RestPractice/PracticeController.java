@@ -17,6 +17,11 @@ public class PracticeController {
 
     @PostMapping("/post-order")
     public String post(@RequestBody Order order){
-        return "Request accepeted. Order is : "+ order.toString();
+        return "Request accepted. Order is : "+ order.toString();
+    }
+
+    @PostMapping("/post-orderRecord")
+    public String post(@RequestBody OrderRecord order){
+        return "Request accepted. Order is : "+ order.toString();
     }
 }
