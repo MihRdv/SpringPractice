@@ -24,4 +24,11 @@ public class PracticeController {
     public String post(@RequestBody OrderRecord order){
         return "Request accepted. Order is : "+ order.toString();
     }
+
+    @GetMapping("/greet/{user-name}")
+    public String greet(
+            @PathVariable("user-name") String userName
+    ){
+        return "Good evening "+ userName;
+    }
 }
